@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Island Hotel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="rooms.html">Номера</a></li>
+      <li><a href="register.html">Регистрация</a></li>
+    </ul>
+  </nav>
+
+  <main class="home">
+    <!-- Левая часть: фото + название -->
+    <section class="hero">
+      <div class="hero-overlay">
+        <h1>Island Hotel</h1>
+        <p>Тихий уголок рая, где начинается ваш отдых</p>
+      </div>
+    </section>
+
+    <!-- Правая часть: описание -->
+    <section class="hotel-info">
+      <h2>О нашем отеле</h2>
+      <p>
+        Добро пожаловать в <strong>Island Hotel</strong> — место, где сочетаются
+        комфорт, гармония и природа. Мы находимся на живописном побережье с видом
+        на лазурное море. Гостей ждут уютные номера, ресторан с морепродуктами,
+        бассейн под открытым небом и вечерние прогулки по пляжу под звуки волн.
+      </p>
+      <p>
+        Наши двери открыты круглый год, чтобы дарить вам отдых, который вы запомните навсегда.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Анимация появления элементов
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".hero, .hotel-info").forEach(el => {
+        el.classList.add("visible");
+      });
+    });
+  </script>
+</body>
+</html>
