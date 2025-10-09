@@ -1,47 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Регистрация — Island Hotel</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Island Hotel — Регистрация</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="sidebar">
-    <ul>
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="rooms.html">Номера</a></li>
-      <li><a href="register.html" class="active">Регистрация</a></li>
-    </ul>
+
+  <div class="main-content">
+    <div class="form-container">
+      <h2>Регистрация</h2>
+      <form>
+        <input type="text" placeholder="Имя" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Пароль" required />
+        <button type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
+
+  <nav>
+    <h2>Меню</h2>
+    <a href="index.html">Главная</a>
+    <a href="rooms.html">Номера</a>
+    <a href="register.html">Регистрация</a>
   </nav>
 
-  <main class="register-page">
-    <header class="page-header">
-      <h1>Регистрация / Бронирование</h1>
-      <p>Пожалуйста, заполните форму ниже</p>
-    </header>
-
-    <form id="registerForm" class="register-form">
-      <label>Имя:
-        <input type="text" name="name" placeholder="Введите ваше имя" required>
-      </label>
-      <label>Email:
-        <input type="email" name="email" placeholder="example@mail.com" required>
-      </label>
-      <label>Пароль:
-        <input type="password" name="password" placeholder="Придумайте пароль" required>
-      </label>
-      <label>Дата заезда:
-        <input type="date" name="checkin" required>
-      </label>
-      <label>Дата выезда:
-        <input type="date" name="checkout" required>
-      </label>
-      <label>Количество гостей:
-        <input type="number" name="guests" min="1" max="10" required>
-      </label>
-      <button type="submit">Зарегистрироваться</button>
-    </form>
-  </main>
 </body>
 </html>
