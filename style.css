@@ -1,147 +1,229 @@
-body {
+/* === Общие стили === */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  display: flex;
-  background: #157ad3;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #f4f7fa;
   color: #333;
+  display: flex;
+  min-height: 100vh;
 }
 
 /* === Боковое меню === */
-.sidebar {
-  width: 220px;
-  background: linear-gradient(180deg, #004466, #0077b6);
-  color: white;
+nav {
+  background-color: #006d77;
+  width: 260px;
   min-height: 100vh;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  margin: 15px 0;
-}
-
-.sidebar a {
-  color: white;
-  text-decoration: none;
-  padding: 12px 20px;
-  display: block;
-  transition: background 0.3s;
-}
-
-.sidebar a:hover {
-  background: #0096c7;
-  border-radius: 6px;
-}
-
-/* === Главная страница === */
-.home {
-  display: flex;
-  flex: 1;
-  align-items: stretch;
-  justify-content: center;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-/* Левая часть — фото и текст */
-.hero {
-  flex: 1;
-  background: url("main.jpeg") no-repeat center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px;
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 1s ease;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-overlay h1 {
-  font-family: 'Georgia', serif;
-  font-size: 3rem;
-  color: #fff8dc;
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
-  margin: 0;
-}
-
-.hero-overlay p {
-  font-size: 1.3rem;
-  margin-top: 15px;
-  color: #e0f7fa;
-}
-
-/* Правая часть — описание отеля */
-.hotel-info {
-  flex: 1;
-  background: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 60px;
-  border-radius: 20px 0 0 20px;
-  box-shadow: -8px 0 20px rgba(0,0,0,0.1);
-  line-height: 1.6;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2rem 1rem;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+nav h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
   font-size: 1.1rem;
-  opacity: 0;
-  transform: translateX(50px);
-  transition: all 1s ease;
+  margin: 0.8rem 0;
+  transition: 0.2s ease;
 }
 
-.hotel-info h2 {
-  color: #004466;
-  margin-bottom: 15px;
+nav a:hover {
+  color: #ffd166;
 }
 
-/* Анимация появления */
-.visible {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+/* === Главный контент === */
+.main-content {
+  margin-right: 260px; /* место под меню */
+  padding: 2rem;
+  width: calc(100% - 260px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* === Адаптивность === */
-@media (max-width: 900px) {
-  .home {
+.hotel-image {
+  width: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hotel-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hotel-info {
+  width: 45%;
+}
+
+.hotel-info h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: #073b4c;
+  margin-bottom: 1rem;
+}
+
+.hotel-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* === Страница Rooms === */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.room-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+}
+
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 1rem;
+}
+
+.room-info h3 {
+  font-size: 1.2rem;
+  color: #073b4c;
+  margin-bottom: 0.5rem;
+}
+
+.room-info p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* === Страница регистрации === */
+.form-container {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 2rem;
+  width: 400px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.form-container h2 {
+  color: #073b4c;
+  margin-bottom: 1rem;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #118ab2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #06d6a0;
+}
+
+/* === Мобильная адаптация === */
+@media (max-width: 1024px) {
+  .main-content {
     flex-direction: column;
-  }
-
-  .hero, .hotel-info {
-    flex: none;
+    margin-right: 0;
     width: 100%;
-    transform: none;
-    opacity: 1;
-    border-radius: 0;
-    box-shadow: none;
+    padding: 1rem;
   }
 
-  .hero {
-    height: 50vh;
+  nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
   }
 
-  .hotel-info {
-    padding: 30px;
+  .hotel-image, .hotel-info {
+    width: 100%;
+    text-align: center;
   }
 
-  .hero-overlay h1 {
+  .hotel-info h1 {
     font-size: 2.2rem;
+  }
+
+  .rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hotel-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .hotel-info p {
+    font-size: 1rem;
+  }
+
+  .form-container {
+    width: 95%;
   }
 }
